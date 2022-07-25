@@ -11,4 +11,10 @@ describe('bank account', () => {
     account.makeDeposit(1000)
     expect(account.getBalance()).toEqual(1000);
   })
+  it('shows updated balance after two deposits', () => {
+    const account = new BankAccount();
+    account.makeDeposit(1000)
+    account.makeDeposit(2000)
+    expect(account.getBalance()).toEqual(3000);
+  })
 })

@@ -1,15 +1,14 @@
 class BankAccount {
+  constructor() {
+  this.balance = 0
+  }
 
   makeDeposit(credit) {
-    this.credit = credit
+    this.balance += credit
   }
 
   getBalance() {
-    if (this.credit > 0) {
-      return this.credit
-    }
-    else {
-    return 0 }
+    return this.balance
   }
 }
 
