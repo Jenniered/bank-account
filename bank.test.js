@@ -53,18 +53,18 @@ describe('bank account', () => {
     expect(account.outputStatement()).toEqual(["13/01/2023 || 1000 ||  || 1000"])
     console.log(account.outputStatement())
   })
-  xit ('prints out statement for two deposits', () => { 
+  it ('prints out statement for two deposits', () => { 
     const account = new BankAccount();
-    account.makeDeposit(1000)
-    account.makeDeposit(2000)
-    expect(account.outputStatement()).toEqual(["|| 1000 ||  || 1000", "|| 2000 ||  || 3000"])
+    account.makeDeposit(1000, "10/01/2023")
+    account.makeDeposit(2000, "13/01/2023")
+    expect(account.outputStatement()).toEqual(["10/01/2023 || 1000 ||  || 1000", "13/01/2023 || 2000 ||  || 3000"])
   })
-  xit ('prints a statement for deposits and a withdrawal', () => { 
+  it ('prints a statement for deposits and a withdrawal', () => { 
     const account = new BankAccount();
-    account.makeDeposit(1000)
-    account.makeDeposit(2000)
-    account.makeWithdrawal(500)
+    account.makeDeposit(1000, "10/01/2023")
+    account.makeDeposit(2000, "13/01/2023")
+    account.makeWithdrawal(500, "14/01/2023")
     console.log(account)
-    expect(account.outputStatement()).toEqual(["|| 1000 ||  || 1000", "|| 2000 ||  || 3000", "||  || 500 || 2500"])
+    expect(account.outputStatement()).toEqual(["10/01/2023 || 1000 ||  || 1000", "13/01/2023 || 2000 ||  || 3000", "14/01/2023 ||  || 500 || 2500"])
   })
 })
