@@ -1,5 +1,4 @@
 const BankAccount = require('./bank')
-const bankAccount = require('./bank')
 
 describe('bank account', () => {
   it('shows the balance of a new account as 0', () => {
@@ -37,5 +36,10 @@ describe('bank account', () => {
     account.makeWithdrawal(1500)
     account.makeDeposit(1000)
     expect(account.getBalance()).toEqual(1000);
+  })
+  it ('creates an object for a deposit', () => { 
+    const account = new BankAccount();
+    account.makeDeposit(1000)
+    expect(account.getStatement()).toEqual({ credit: 1000, balance: 1000})
   })
 })

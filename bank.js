@@ -4,7 +4,8 @@ class BankAccount {
   }
 
   makeDeposit(credit) {
-    this.balance += credit
+    this.credit = credit
+    this.balance += this.credit
   }
 
   makeWithdrawal(debit) {
@@ -14,6 +15,14 @@ class BankAccount {
   getBalance() {
     return this.balance
   }
+
+  getStatement() {
+    return {
+      credit: this.credit,
+      balance: this.balance
+    }
+  }
+
 }
 
 module.exports = BankAccount

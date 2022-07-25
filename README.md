@@ -16,3 +16,8 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 ```
+### My approach
+
+1. I began with a recipe document and wrote user stories for the task
+2. I planned out my first few tests to use TDD to build basic functionality for the programme. 
+3. Using TDD, I built the programme to deal with multiple deposits and withdrawals, but without the date. 

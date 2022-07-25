@@ -28,7 +28,6 @@ Include the initializer and public methods with all parameters and return values
 class BankAccount
   constructor 
     
-
   makeDeposit(credit, date)
     # amount is an integer
     # No return value
@@ -37,11 +36,11 @@ class BankAccount
     # amount is an integer
     # No return value
 
-  get Balance()
+  getBalance()
      # returns overall balance of account
 
-  printStatement()
-    # prints statement of activity
+  getStatement()
+    # returns statement of activity
 
 
 3. Create Examples as Tests
@@ -75,6 +74,6 @@ account.balance() # => 2500
 Adding in date
 
 # 6
-Print statement
+Get statement
 
 What happens if insufficient funds in the account? 
