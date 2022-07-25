@@ -42,4 +42,10 @@ describe('bank account', () => {
     account.makeDeposit(1000)
     expect(account.getStatement()).toEqual({ credit: 1000, balance: 1000})
   })
+  it ('creates an object for a withdrawal', () => { 
+    const account = new BankAccount();
+    // account.makeDeposit(1000)
+    account.makeWithdrawal(500)
+    expect(account.getStatement()).toEqual({ debit: 500, balance: -500})
+  })
 })

@@ -9,7 +9,8 @@ class BankAccount {
   }
 
   makeWithdrawal(debit) {
-    this.balance -= debit
+    this.debit = debit
+    this.balance -= this.debit
   }
 
   getBalance() {
@@ -19,6 +20,7 @@ class BankAccount {
   getStatement() {
     return {
       credit: this.credit,
+      debit: this.debit,
       balance: this.balance
     }
   }
