@@ -6,4 +6,9 @@ describe('bank account', () => {
     const account = new BankAccount();
     expect(account.getBalance()).toEqual(0);
   })
+  it('shows updated balance after one deposit', () => {
+    const account = new BankAccount();
+    account.makeDeposit(1000)
+    expect(account.getBalance()).toEqual(1000);
+  })
 })
