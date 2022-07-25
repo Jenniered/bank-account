@@ -1,6 +1,9 @@
 class Statement {
 
+  printStatement() {
+    return []
+  }
 }
 
 
-module.exports = statement
+module.exports = Statement
