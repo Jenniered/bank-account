@@ -23,4 +23,19 @@ describe('bank account', () => {
     account.makeWithdrawal(500)
     expect(account.getBalance()).toEqual(500);
   })
+  it('shows updated balance after two deposits and a withdrawal', () => {
+    const account = new BankAccount();
+    account.makeDeposit(1000)
+    account.makeDeposit(2000)
+    account.makeWithdrawal(500)
+    expect(account.getBalance()).toEqual(2500);
+  })
+  it('shows updated balance after two deposits and a withdrawal', () => {
+    const account = new BankAccount();
+    account.makeDeposit(2000)
+    account.makeWithdrawal(500)
+    account.makeWithdrawal(1500)
+    account.makeDeposit(1000)
+    expect(account.getBalance()).toEqual(1000);
+  })
 })
