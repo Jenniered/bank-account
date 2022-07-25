@@ -4,15 +4,17 @@ class BankAccount {
   this.printout = []
   }
 
-  makeDeposit(credit) {
+  makeDeposit(credit, date) {
     this.credit = credit
+    this.date = date
     this.debit = 0
     this.balance += credit
     this.getStatement();
   }
 
-  makeWithdrawal(debit) {
+  makeWithdrawal(debit, date) {
     this.debit = debit
+    this.date = date
     this.credit = 0
     this.balance -= debit
     this.getStatement();
@@ -24,6 +26,7 @@ class BankAccount {
 
   getStatement() {
     let statement = {
+      date: this.date,
       credit: this.credit,
       debit: this.debit,
       balance: this.balance
@@ -38,8 +41,7 @@ class BankAccount {
   }
 
   outputStatement() {
-    // let print = ""
-      return this.printout.map((object) => { return `|| ${(object.credit)} || || ${(object.balance)}` });
+      return this.printout.map((object) => { return `${(object.date)} || ${(object.credit) || ""} || ${(object.debit) || ""} || ${(object.balance)}` });
   }
 }
 
