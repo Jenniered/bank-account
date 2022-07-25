@@ -35,17 +35,32 @@ describe('bank account', () => {
     account.makeWithdrawal(500)
     account.makeWithdrawal(1500)
     account.makeDeposit(1000)
-    expect(account.getBalance()).toEqual(1000);
+    expect(account.getBalance()).toEqual(1000)
   })
   it ('creates an object for a deposit', () => { 
     const account = new BankAccount();
     account.makeDeposit(1000)
-    expect(account.getStatement()).toEqual({ credit: 1000, balance: 1000})
+    expect(account.printStatement()).toEqual([{ credit: 1000, balance: 1000}])
   })
   it ('creates an object for a withdrawal', () => { 
     const account = new BankAccount();
     // account.makeDeposit(1000)
     account.makeWithdrawal(500)
-    expect(account.getStatement()).toEqual({ debit: 500, balance: -500})
+    expect(account.printStatement()).toEqual([{ debit: 500, balance: -500}])
   })
+  it ('prints out statement with one deposit', () => { 
+    const account = new BankAccount();
+    account.makeDeposit(1000)
+    console.log(account)
+    expect(account.outputStatement()).toEqual(["|| 1000 || || 1000"])
+    console.log(account.outputStatement())
+  })
+  it ('prints out statement for two deposits', () => { 
+    const account = new BankAccount();
+    account.makeDeposit(1000)
+    account.makeDeposit(2000)
+    console.log(account)
+    expect(account.outputStatement()).toEqual(["|| 1000 || || 1000", "|| 2000 || || 3000"])
+  })
+  
 })
