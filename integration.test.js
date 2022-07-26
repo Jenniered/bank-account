@@ -22,7 +22,6 @@ describe('transaction and statement integration', () => {
     account.makeDeposit(1000.00, "10/01/2023")
     const statement = new Statement(account);
     expect(statement.getStatement()).toEqual(["date || credit || debit || balance", "10/01/2023 || 1000.00 || || 1000.00"])
-    console.log(statement.getStatement())
   })
 
   it ('prints out statement for two deposits', () => { 
