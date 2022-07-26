@@ -9,7 +9,7 @@ class Statement {
     return this.account.printout
   }
 
-  outputStatement() {
+  getStatement() {
     return this.account.printout.map((object) => { return `${(object.date)} || ${(object.credit) || ""} || ${(object.debit) || ""} || ${(object.balance)}` });
 }
 
