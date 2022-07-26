@@ -40,9 +40,6 @@ class BankAccount {
     return this.printout;
   }
 
-  outputStatement() {
-      return this.printout.map((object) => { return `${(object.date)} || ${(object.credit) || ""} || ${(object.debit) || ""} || ${(object.balance)}` });
-  }
 }
 
 module.exports = BankAccount
