@@ -51,7 +51,6 @@ describe('bank account', () => {
     const account = new BankAccount();
     account.makeDeposit(1000, "13/01/2023")
     expect(account.outputStatement()).toEqual(["13/01/2023 || 1000 ||  || 1000"])
-    console.log(account.outputStatement())
   })
   it ('prints out statement for two deposits', () => { 
     const account = new BankAccount();

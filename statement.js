@@ -1,8 +1,14 @@
-class Statement {
+const BankAccount = require('./bank');
 
-  printStatement() {
-    return []
+class Statement {
+  constructor(account) {
+    this.account = account
   }
+
+  getPrintout() {
+    return this.account.printout
+  }
+
 }
 
 
