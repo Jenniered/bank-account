@@ -35,11 +35,6 @@ class BankAccount {
     return transaction
     // return Object.keys(transaction).reduce((v, k) => (!transaction[k] && delete v[k], v), transaction)
   }
-
-  printStatement() {
-    return this.transactions;
-  }
-
 }
 
 module.exports = BankAccount
