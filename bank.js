@@ -33,7 +33,10 @@ class BankAccount {
       }
     this.transactions.push(transaction);
     return transaction
-    // return Object.keys(transaction).reduce((v, k) => (!transaction[k] && delete v[k], v), transaction)
+  }
+
+  mockTest() {
+    return this.transactions
   }
 }
 

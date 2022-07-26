@@ -10,10 +10,8 @@ class Statement {
   }
 
   getStatement() {
-    return this.account.transactions.map((object) => { return `${(object.date)} || ${(object.credit) || ""} || ${(object.debit) || ""} || ${(object.balance)}` });
+    return this.account.transactions.map((object) => { return `${(object.date)} || ${(object.credit.toFixed(2)) || ""} || ${ (object.debit.toFixed(2)) || ""} || ${(object.balance.toFixed(2))}` });
+  }
 }
-
-}
-
 
 module.exports = Statement
