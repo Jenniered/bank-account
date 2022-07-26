@@ -34,10 +34,6 @@ class BankAccount {
     this.transactions.push(transaction);
     return transaction
   }
-
-  mockTest() {
-    return this.transactions
-  }
 }
 
 module.exports = BankAccount

@@ -21,3 +21,5 @@ date || credit || debit || balance
 1. I began with a recipe document and wrote user stories for the task
 2. I planned out my first few tests to use TDD to build basic functionality for the programme. 
 3. Using TDD, I built the programme to deal with multiple deposits and withdrawals, but without the date. 
+4. I added in the date as an argument in the tests and updated the code accordingly.
+5. 
