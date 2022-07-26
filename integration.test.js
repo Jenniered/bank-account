@@ -17,4 +17,11 @@ describe('printing a statement', () => {
     expect(statement.getPrintout()).toEqual([{date: "10/01/2023", credit: 1000, balance: 1000}, {date: "13/01/2023", credit: 2000, balance: 3000}])
     console.log(account)
   })
+
+  it ('prints out statement with one deposit', () => { 
+    const account = new BankAccount();
+    account.makeDeposit(1000, "10/01/2023")
+    const statement = new Statement(account);
+    expect(account.outputStatement()).toEqual(["10/01/2023 || 1000 ||  || 1000"])
+  })
 })
