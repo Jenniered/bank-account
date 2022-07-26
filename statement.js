@@ -5,12 +5,12 @@ class Statement {
     this.account = account
   }
 
-  getPrintout() {
-    return this.account.printout
+  getTransactions() {
+    return this.account.transactions
   }
 
   getStatement() {
-    return this.account.printout.map((object) => { return `${(object.date)} || ${(object.credit) || ""} || ${(object.debit) || ""} || ${(object.balance)}` });
+    return this.account.transactions.map((object) => { return `${(object.date)} || ${(object.credit) || ""} || ${(object.debit) || ""} || ${(object.balance)}` });
 }
 
 }

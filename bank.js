@@ -1,43 +1,43 @@
 class BankAccount {
   constructor() {
   this.balance = 0
-  this.printout = []
+  this.transactions = []
   }
 
   makeDeposit(credit, date) {
     this.credit = credit
     this.date = date
     this.debit = 0
-    this.balance += credit
-    this.getStatement();
+    this.balance += this.credit
+    this.logTransaction();
   }
 
   makeWithdrawal(debit, date) {
     this.debit = debit
     this.date = date
     this.credit = 0
-    this.balance -= debit
-    this.getStatement();
+    this.balance -= this.debit
+    this.logTransaction();
   }
 
   getBalance() {
     return this.balance
   }
 
-  getStatement() {
-    let statement = {
+  logTransaction() {
+    let transaction = {
       date: this.date,
       credit: this.credit,
       debit: this.debit,
       balance: this.balance
       }
-    this.printout.push(statement);
+    this.transactions.push(transaction);
     // return statement
-    return Object.keys(statement).reduce((v, k) => (!statement[k] && delete v[k], v), statement)
+    return Object.keys(transaction).reduce((v, k) => (!transaction[k] && delete v[k], v), transaction)
   }
 
   printStatement() {
-    return this.printout;
+    return this.transactions;
   }
 
 }
