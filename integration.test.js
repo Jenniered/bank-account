@@ -9,7 +9,7 @@ describe('printing a statement', () => {
     expect(statement.getPrintout()).toEqual([{credit: 1000, balance: 1000}])
   })
 
-  xit('adds a two credit lines to the statement', () => {
+  it('adds a two credit lines to the statement', () => {
     const account = new BankAccount();
     account.makeDeposit(1000)
     account.makeDeposit(2000)
