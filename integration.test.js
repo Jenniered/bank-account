@@ -21,7 +21,7 @@ describe('transaction and statement integration', () => {
     const account = new BankAccount();
     account.makeDeposit(1000.00, "10/01/2023")
     const statement = new Statement(account);
-    expect(statement.getStatement()).toEqual(["date || credit || debit || balance", "10/01/2023 || 1000.00 || 0.00 || 1000.00"])
+    expect(statement.getStatement()).toEqual(["date || credit || debit || balance", "10/01/2023 || 1000.00 || || 1000.00"])
     console.log(statement.getStatement())
   })
 
@@ -30,7 +30,7 @@ describe('transaction and statement integration', () => {
     account.makeDeposit(1000.00, "10/01/2023")
     account.makeDeposit(2000.00, "13/01/2023")
     const statement = new Statement(account);
-    expect(statement.getStatement()).toEqual(["date || credit || debit || balance", "13/01/2023 || 2000.00 || 0.00 || 3000.00", "10/01/2023 || 1000.00 || 0.00 || 1000.00"])
+    expect(statement.getStatement()).toEqual(["date || credit || debit || balance", "13/01/2023 || 2000.00 || || 3000.00", "10/01/2023 || 1000.00 || || 1000.00"])
   })
 
   it ('prints a statement for deposits and a withdrawal', () => { 
@@ -39,7 +39,6 @@ describe('transaction and statement integration', () => {
     account.makeDeposit(2000.00, "13/01/2023")
     account.makeWithdrawal(500.00, "14/01/2023")
     const statement = new Statement(account);
-    expect(statement.getStatement()).toEqual(["date || credit || debit || balance", "14/01/2023 || 0.00 || 500.00 || 2500.00", "13/01/2023 || 2000.00 || 0.00 || 3000.00", "10/01/2023 || 1000.00 || 0.00 || 1000.00"])
-    console.log(statement.getStatement())
+    expect(statement.getStatement()).toEqual(["date || credit || debit || balance", "14/01/2023 || || 500.00 || 2500.00", "13/01/2023 || 2000.00 || || 3000.00", "10/01/2023 || 1000.00 || || 1000.00"])
   })
 })
