@@ -32,8 +32,8 @@ class BankAccount {
       balance: this.balance
       }
     this.transactions.push(transaction);
-    // return statement
-    return Object.keys(transaction).reduce((v, k) => (!transaction[k] && delete v[k], v), transaction)
+    return transaction
+    // return Object.keys(transaction).reduce((v, k) => (!transaction[k] && delete v[k], v), transaction)
   }
 
   printStatement() {

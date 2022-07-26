@@ -40,11 +40,17 @@ describe('bank account', () => {
   it ('creates an object for a deposit', () => { 
     const account = new BankAccount();
     account.makeDeposit(1000, "10/01/2023")
-    expect(account.printStatement()).toEqual([{ date: "10/01/2023", credit: 1000, balance: 1000}])
+    expect(account.printStatement()).toEqual([{ date: "10/01/2023", credit: 1000, debit: 0, balance: 1000}])
   })
   it ('creates an object for a withdrawal', () => { 
     const account = new BankAccount();
     account.makeWithdrawal(500, "13/01/2023")
-    expect(account.printStatement()).toEqual([{ date: "13/01/2023", debit: 500, balance: -500}])
+    expect(account.printStatement()).toEqual([{ date: "13/01/2023", credit: 0, debit: 500, balance: -500}])
+  })
+  it ('creates a balance of 0', () => { 
+    const account = new BankAccount();
+    account.makeDeposit(500, "10/01/2023")
+    account.makeWithdrawal(500, "13/01/2023")
+    expect(account.printStatement()).toEqual([{ date: "10/01/2023", credit: 500, debit: 0, balance: 500}, { date: "13/01/2023", credit: 0, debit: 500, balance: 0}])
   })
 })
