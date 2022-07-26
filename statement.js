@@ -2,11 +2,11 @@ const BankAccount = require('./bank');
 
 class Statement {
   constructor(account) {
-    this.account = account
+    this.account = account;
   }
 
   getTransactions() {
-    return this.account.transactions
+    return this.account.transactions;
   }
 
   formatStatement() {
@@ -19,7 +19,7 @@ class Statement {
 
   getStatement() {
     const statementPrintout = this.formatStatement();
-    return statementPrintout
+    return statementPrintout;
   }
 
   reverseStatement(statement) {
@@ -32,7 +32,7 @@ class Statement {
 
   removeZero(statement) {
     const final = statement.map((string) => { return string.replaceAll(" 0.00 ", " ") })
-    return final
+    return final;
   }
 }
 

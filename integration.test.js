@@ -1,5 +1,5 @@
 const BankAccount = require('./bank');
-const Statement = require('./statement')
+const Statement = require('./statement');
 
 describe('transaction and statement integration', () => {
   it('adds a credit to the statement', () => {

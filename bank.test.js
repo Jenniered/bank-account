@@ -35,7 +35,7 @@ describe('bank account', () => {
     account.makeWithdrawal(500.00)
     account.makeWithdrawal(1500.00)
     account.makeDeposit(1000.00)
-    expect(account.getBalance()).toEqual(1000.00)
+    expect(account.getBalance()).toEqual(1000.00);
   })
   it('records a transaction for one deposit', () => {
     const account = new BankAccount();

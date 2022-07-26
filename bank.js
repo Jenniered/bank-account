@@ -1,7 +1,7 @@
 class BankAccount {
   constructor() {
-  this.balance = 0
-  this.transactions = []
+    this.balance = 0;
+    this.transactions = [];
   }
 
   makeDeposit(credit, date) {
@@ -21,7 +21,7 @@ class BankAccount {
   }
 
   getBalance() {
-    return this.balance
+    return this.balance;
   }
 
   logTransaction() {
@@ -32,7 +32,7 @@ class BankAccount {
       balance: this.balance
       }
     this.transactions.push(transaction);
-    return transaction
+    return transaction;
   }
 }
 
