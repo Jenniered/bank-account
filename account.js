@@ -1,4 +1,4 @@
-class BankAccount {
+class Account {
   constructor() {
     this.balance = 0;
     this.transactions = [];
@@ -36,4 +36,5 @@ class BankAccount {
   }
 }
 
-module.exports = BankAccount
+
+module.exports = Account
