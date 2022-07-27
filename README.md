@@ -1,6 +1,6 @@
 # Bank Tech Test
 
-The challenge is to write programme that would manage a bank account. 
+The challenge was to write program that would manage a bank account. 
 
 ### Acceptance criteria
 
@@ -22,7 +22,7 @@ date || credit || debit || balance
 1. I began with a recipe document and wrote user stories for the task
 2. I planned out my first few tests to use TDD to build basic functionality for the programme. 
 3. Using TDD, I built the programme to deal with multiple deposits and withdrawals, but without the date. 
-4. I added in the date as an argument in the tests and updated the code accordingly.
+4. I added in the date as an argument in the tests and updated the code as I went test by test.
 5. I added the functions to print out a statement - following this I added a separate class for statement and refactored by moving the functions there according to separation of concerns
 6. I used mocking for unit tests for the statement class
 7. I refactored to improve the formatting of the statement so it matched what is shown in the acceptance criteria
@@ -51,7 +51,7 @@ date || credit || debit || balance
 
 ### Run the program
 The program to run for the acceptance criteria is at the bottom of the file statement.js. 
-Run it from the command line.
+Run it from the command line and you should see the statement printed as shown above. 
   ```
   node statement.js
   ```
