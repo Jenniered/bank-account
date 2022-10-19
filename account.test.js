@@ -37,18 +37,13 @@ describe('bank account', () => {
     account.makeDeposit(1000.00)
     expect(account.getBalance()).toEqual(1000.00);
   })
-  it('records a Account for one deposit', () => {
+  it('returns transaction history for one deposit', () => {
     const account = new Account();
     account.makeDeposit(1000.00, "10/01/2023")
-    expect(account.logTransaction()).toEqual({date: "10/01/2023", credit: 1000.00, debit: 0.00, balance: 1000.00});
-  })
-  it('records a transaction for one withdrawal', () => {
-    const account = new Account();
-    account.makeWithdrawal(500.00, "12/01/2023")
-    expect(account.logTransaction()).toEqual({date: "12/01/2023", credit: 0.00, debit: 500.00, balance: -500.00});
+    expect(account.getTransactionHistory()).toEqual([{date: "10/01/2023", credit: 1000.00, debit: 0.00, balance: 1000.00}]);
   })
 
-  it('returns transaction history', () => {
+  it('returns transaction history for one withdrawal', () => {
     const account = new Account();
     account.makeWithdrawal(500.00, "12/01/2023")
     expect(account.getTransactionHistory()).toEqual([{date: "12/01/2023", credit: 0.00, debit: 500.00, balance: -500.00}]);

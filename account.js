@@ -5,30 +5,30 @@ class Account {
   }
 
   makeDeposit(credit, date) {
-    this.credit = credit
-    this.date = date
-    this.debit = 0
-    this.balance += this.credit
-    this.logTransaction();
+    credit = credit
+    date = date
+    let debit = 0
+    this.balance += credit
+    this.logTransaction(credit, debit, date);
   }
 
   makeWithdrawal(debit, date) {
-    this.debit = debit
-    this.date = date
-    this.credit = 0
-    this.balance -= this.debit
-    this.logTransaction();
+    debit = debit
+    date = date
+    let credit = 0
+    this.balance -= debit
+    this.logTransaction(credit, debit, date);
   }
 
   getBalance() {
     return this.balance;
   }
 
-  logTransaction() {
+  logTransaction(credit, debit, date) {
     let transaction = {
-      date: this.date,
-      credit: this.credit,
-      debit: this.debit,
+      date: date,
+      credit: credit,
+      debit: debit,
       balance: this.balance
       }
     this.transactions.push(transaction);
@@ -36,6 +36,7 @@ class Account {
   }
 
   getTransactionHistory() {
+    console.log(this.transactions)
     return this.transactions
   }
 }
