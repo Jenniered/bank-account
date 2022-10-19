@@ -47,4 +47,10 @@ describe('bank account', () => {
     account.makeWithdrawal(500.00, "12/01/2023")
     expect(account.logTransaction()).toEqual({date: "12/01/2023", credit: 0.00, debit: 500.00, balance: -500.00});
   })
+
+  it('returns transaction history', () => {
+    const account = new Account();
+    account.makeWithdrawal(500.00, "12/01/2023")
+    expect(account.getTransactionHistory()).toEqual([{date: "12/01/2023", credit: 0.00, debit: 500.00, balance: -500.00}]);
+  })
 })

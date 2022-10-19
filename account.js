@@ -34,6 +34,10 @@ class Account {
     this.transactions.push(transaction);
     return transaction;
   }
+
+  getTransactionHistory() {
+    return this.transactions
+  }
 }
 
 
