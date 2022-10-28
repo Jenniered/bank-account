@@ -1,6 +1,14 @@
 const Account = require('./account')
 
 describe('bank account', () => {
+    beforeAll(() => {
+      jest.spyOn(Date, "now").mockImplementation(() => new Date("2023-01-10"));
+    });
+  
+    afterAll(() => {
+      Date.now.mockRestore();
+    });
+    
   it('shows the balance of a new account as 0', () => {
     const account = new Account();
     expect(account.getBalance()).toEqual(0);

@@ -6,7 +6,7 @@ class Account {
 
   makeDeposit(credit, date) {
     credit = credit
-    date = date
+    date = new Date(Date.now()).toLocaleString().split(",")[0]
     let debit = 0
     this.balance += credit
     this.logTransaction(credit, debit, date);
