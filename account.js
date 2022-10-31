@@ -14,7 +14,7 @@ class Account {
 
   makeWithdrawal(debit, date) {
     debit = debit
-    date = date
+    date = new Date(Date.now()).toLocaleString().split(",")[0]
     let credit = 0
     this.balance -= debit
     this.logTransaction(credit, debit, date);

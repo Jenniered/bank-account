@@ -8,7 +8,7 @@ describe('bank account', () => {
     afterAll(() => {
       Date.now.mockRestore();
     });
-    
+
   it('shows the balance of a new account as 0', () => {
     const account = new Account();
     expect(account.getBalance()).toEqual(0);
@@ -53,7 +53,7 @@ describe('bank account', () => {
 
   it('returns transaction history for one withdrawal', () => {
     const account = new Account();
-    account.makeWithdrawal(500.00, "12/01/2023")
-    expect(account.getTransactionHistory()).toEqual([{date: "12/01/2023", credit: 0.00, debit: 500.00, balance: -500.00}]);
+    account.makeWithdrawal(500.00, "10/01/2023")
+    expect(account.getTransactionHistory()).toEqual([{date: "10/01/2023", credit: 0.00, debit: 500.00, balance: -500.00}]);
   })
 })
