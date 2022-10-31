@@ -6,7 +6,7 @@ class Account {
 
   makeDeposit(credit) {
     credit = credit
-    let date = new Date(Date.now()).toLocaleString().split(",")[0]
+    let date = this.dateFormat(new Date(Date.now()))
     let debit = 0
     this.balance += credit
     this.logTransaction(credit, debit, date);
@@ -14,7 +14,7 @@ class Account {
 
   makeWithdrawal(debit) {
     debit = debit
-    let date = new Date(Date.now()).toLocaleString().split(",")[0]
+    let date = this.dateFormat(new Date(Date.now()))
     let credit = 0
     this.balance -= debit
     this.logTransaction(credit, debit, date);
@@ -38,6 +38,13 @@ class Account {
   getTransactionHistory() {
     console.log(this.transactions)
     return this.transactions
+  }
+
+
+  private
+
+  dateFormat(date) {
+    return date.toLocaleString().split(",")[0]
   }
 }
 
