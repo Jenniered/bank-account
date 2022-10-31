@@ -47,13 +47,13 @@ describe('bank account', () => {
   })
   it('returns transaction history for one deposit', () => {
     const account = new Account();
-    account.makeDeposit(1000.00, "10/01/2023")
+    account.makeDeposit(1000.00)
     expect(account.getTransactionHistory()).toEqual([{date: "10/01/2023", credit: 1000.00, debit: 0.00, balance: 1000.00}]);
   })
 
   it('returns transaction history for one withdrawal', () => {
     const account = new Account();
-    account.makeWithdrawal(500.00, "10/01/2023")
+    account.makeWithdrawal(500.00)
     expect(account.getTransactionHistory()).toEqual([{date: "10/01/2023", credit: 0.00, debit: 500.00, balance: -500.00}]);
   })
 })
